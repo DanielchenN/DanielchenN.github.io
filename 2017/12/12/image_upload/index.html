@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-前端 -Nodejs," />
 
 
 
@@ -87,12 +87,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="写在前面这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。 ##版本依赖  “express”: “^4.16.2”, “file-type”: “^7.3.0”, “for">
+<meta name="keywords" content="-前端 -Nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs 图片上传及回显">
+<meta property="og:url" content="http://yoursite.com/2017/12/12/image_upload/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="写在前面这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。 ##版本依赖  “express”: “^4.16.2”, “file-type”: “^7.3.0”, “for">
+<meta property="og:updated_time" content="2017-12-15T10:10:38.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Nodejs 图片上传及回显">
+<meta name="twitter:description" content="写在前面这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。 ##版本依赖  “express”: “^4.16.2”, “file-type”: “^7.3.0”, “for">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/12/image_upload/"/>
 
 
 
 
 
-  <title> Hexo </title>
+  <title> Nodejs 图片上传及回显 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -151,9 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,129 +259,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/first-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daniel Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/12/first-post/" itemprop="url">
-                  first post
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T20:40:14+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -408,10 +291,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/12/12/image_upload/" itemprop="url">
-                  Nodejs 图片上传及回显
-                </a>
+                Nodejs 图片上传及回显
               
             
           </h1>
@@ -462,9 +342,7 @@
       
 
       
-        
-          
-            <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。</p>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。</p>
 <p>##版本依赖</p>
 <ul>
 <li>“express”: “^4.16.2”,</li>
@@ -495,171 +373,76 @@
 <p>这里用了 fs 的 readdir方法来读取文件夹下所有的文件 stat 读取文件的信息。这里ctime就是时间了。自定义一个最长时间，就可以用unlink方法删除了！</p>
 <p>##后记<br>附上<a href="https://github.com/DanielchenN/Image_upload" target="_blank" rel="noopener">github地址</a><br>写到这里大概整体框架也就说完了，第一次写完整的技术博客压力山大。（技术很菜，还希望不要误导了别人。<br>有一些细节问题，知识点，在这里不方便阐述，我会单开页面来说，感谢各位的阅读！</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daniel Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/12/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T19:33:07+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/前端-Nodejs/" rel="tag"># -前端 -Nodejs</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/12/first-post/" rel="prev" title="first post">
+                first post <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -667,6 +450,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -686,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -740,6 +536,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端构架"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x524D;&#x540E;&#x7AEF;&#x6784;&#x67B6;" class="headerlink" title="&#x524D;&#x540E;&#x7AEF;&#x6784;&#x67B6;"></a>&#x524D;&#x540E;&#x7AEF;&#x6784;&#x67B6;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除过期文件"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x5220;&#x9664;&#x8FC7;&#x671F;&#x6587;&#x4EF6;" class="headerlink" title="&#x5220;&#x9664;&#x8FC7;&#x671F;&#x6587;&#x4EF6;"></a>&#x5220;&#x9664;&#x8FC7;&#x671F;&#x6587;&#x4EF6;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -847,6 +659,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
