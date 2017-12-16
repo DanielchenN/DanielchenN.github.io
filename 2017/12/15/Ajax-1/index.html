@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="contentType在上次的项目中有提到，上传文件时，要将contentType和processData都设置为false，现在给出我的理解（轻拍contentType (default: ‘application/x-www-form-urlencoded; charset=UTF-8’) When sending data to the server, use this content ty">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-15T14:12:58.100Z">
+<meta property="og:updated_time" content="2017-12-16T00:00:26.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Ajax中的contentType和processData">
 <meta name="twitter:description" content="contentType在上次的项目中有提到，上传文件时，要将contentType和processData都设置为false，现在给出我的理解（轻拍contentType (default: ‘application/x-www-form-urlencoded; charset=UTF-8’) When sending data to the server, use this content ty">
@@ -347,10 +347,10 @@
 <p>Note: The W3C XMLHttpRequest specification dictates that the charset is always UTF-8; specifying another charset will not force the browser to change the encoding. Note: For cross-domain requests, setting the content type to anything other than application/x-www-form-urlencoded, multipart/form-data, or text/plain will trigger the browser to send a preflight OPTIONS request to the server.<br>上面是Jquery官网给的解释</p>
 <p>简单的说，</p>
 <ol>
-<li>对于上传文件<code>contentType = multipart/form-data</code>作为请求头是必须的，<br>而普通的post请求头是 <code>application/x-www-form-urlencoded</code>.所以如果没有设置成false。</li>
+<li>对于上传文件<code>contentType = multipart/form-data</code>作为请求头是必须的，<br>而普通的post请求头是 <code>application/x-www-form-urlencoded</code>.所以如果没有设置成false,是不能用来传输文件的</li>
 <li>其次作为文件上传和作为普通字符串上传比如id=”XXX”在请求体中也是不同的。<br>这也就是为什么我们需要在form表单中加入<code>enctype = “multipart/form-data”</code> 的原因，由此才能让服务器正确的解析文件</li>
 </ol>
-<h1 id="processData"><a href="#processData" class="headerlink" title="processData"></a>processData</h1><p>By default, data passed in to the data option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type “application/x-www-form-urlencoded”. If you want to send a DOMDocument, or other non-processed data, set this option to false.</p>
+<h2 id="processData"><a href="#processData" class="headerlink" title="processData"></a>processData</h2><p>By default, data passed in to the data option as an object (technically, anything other than a string) will be processed and transformed into a query string, fitting to the default content-type “application/x-www-form-urlencoded”. If you want to send a DOMDocument, or other non-processed data, set this option to false.</p>
 <p>处于同样的理由，如果processData为true,会被处理并转换为query string。所以这里也需设为false。</p>
 
       
@@ -516,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#contentType"><span class="nav-number">1.</span> <span class="nav-text"><a href="#contentType" class="headerlink" title="contentType"></a>contentType</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#processData"><span class="nav-number"></span> <span class="nav-text"><a href="#processData" class="headerlink" title="processData"></a>processData</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#contentType"><span class="nav-number">1.</span> <span class="nav-text"><a href="#contentType" class="headerlink" title="contentType"></a>contentType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#processData"><span class="nav-number">2.</span> <span class="nav-text"><a href="#processData" class="headerlink" title="processData"></a>processData</span></a></li></ol></div>
             
 
           </div>
