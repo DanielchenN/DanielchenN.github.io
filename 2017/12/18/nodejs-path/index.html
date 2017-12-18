@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Nodejs的path模块，相比大家都不陌生。引入静态文件 各种path.join(_dirname,”XXX”)，而path.join和reslove虽然概念很清晰，前者解析相对路径，后者解析绝对路径，但不上例子还是容易混淆。先看官网描述：  The path.join() method joins all given path segments together using the platf">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/12/12/hello-world/index.html">
+<meta property="og:title" content="Nodejs path.resolve 和 path.join">
+<meta property="og:url" content="http://yoursite.com/2017/12/18/nodejs-path/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Nodejs的path模块，相比大家都不陌生。引入静态文件 各种path.join(_dirname,”XXX”)，而path.join和reslove虽然概念很清晰，前者解析相对路径，后者解析绝对路径，但不上例子还是容易混淆。先看官网描述：  The path.join() method joins all given path segments together using the platf">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-12T11:33:07.711Z">
+<meta property="og:updated_time" content="2017-12-18T08:36:11.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Nodejs path.resolve 和 path.join">
+<meta name="twitter:description" content="Nodejs的path模块，相比大家都不陌生。引入静态文件 各种path.join(_dirname,”XXX”)，而path.join和reslove虽然概念很清晰，前者解析相对路径，后者解析绝对路径，但不上例子还是容易混淆。先看官网描述：  The path.join() method joins all given path segments together using the platf">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/12/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/18/nodejs-path/"/>
 
 
 
 
 
-  <title> Hello World | Hexo </title>
+  <title> Nodejs path.resolve 和 path.join | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/nodejs-path/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -291,7 +292,7 @@
             
             
               
-                Hello World
+                Nodejs path.resolve 和 path.join
               
             
           </h1>
@@ -306,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T19:33:07+08:00">
-                2017-12-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T16:10:25+08:00">
+                2017-12-18
               </time>
             
 
@@ -342,15 +343,22 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>Nodejs的path模块，相比大家都不陌生。引入静态文件 各种path.join(_dirname,”XXX”)，而path.join和reslove虽然概念很清晰，前者解析相对路径，后者解析绝对路径，但不上例子还是容易混淆。先看官网描述：</p>
+<ol>
+<li>The path.join() method joins all given path segments together using the platform specific separator as a delimiter, then normalizes the resulting path.</li>
+</ol>
+<p>上述说明简单来说  path.join()就是连接路径，使用 系统的 分隔符</p>
+<ol>
+<li>The path.resolve() method resolves a sequence of paths or path segments into an absolute path.<br>The given sequence of paths is processed from right to left, with each subsequent path prepended until an absolute path is constructed. For instance, given the sequence of path segments: /foo, /bar, baz, calling path.resolve(‘/foo’, ‘/bar’, ‘baz’) would return /bar/baz.</li>
+</ol>
+<p>而path.resolve() 从右往左，解析成绝对路径，<strong>直到绝对路径被构建</strong>，其他没有使用的变量就不再使用。</p>
+<a id="more"></a>
+<p>来看几个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">console.log(&quot;__dirname&quot;,__dirname) //d:\Frontend\Nodejs\path 文件目录</span><br><span class="line">var path1=path.join(&apos;app/libs/oauth&apos;, &apos;/../ssl&apos;)</span><br><span class="line">console.log(&apos;path1:&apos;,path1) //app\libs\ssl</span><br><span class="line"></span><br><span class="line">var path2=path.resolve(&apos;/bar/bae&apos;, &apos;/foo&apos;, &apos;test&apos;);</span><br><span class="line">console.log(&apos;path2:&apos;,path2) //d:\foo\test（从右往左已经解析成了绝对路径！所有没有/bar/bea）</span><br><span class="line"></span><br><span class="line">var path3= path.resolve(&apos;/foo/bar&apos;, &apos;../tmp/file/&apos;);</span><br><span class="line">console.log(&apos;path3:&apos;,path3) //d:\foo\tmp\file</span><br><span class="line"></span><br><span class="line">var path4= path.resolve(&apos;/foo/bar&apos;, &apos;./tmp/file/&apos;); //d:\foo\bar\tmp\file</span><br><span class="line"></span><br><span class="line">var path3= path.resolve(&apos;foo/bar&apos;, &apos;./tmp/file/&apos;); //d:\Frontend\Nodejs\path\foo\bar\tmp\file</span><br><span class="line"></span><br><span class="line">var path5=path.resolve(&apos;wwwroot&apos;, &apos;static_files/png/&apos;, &apos;../gif/image.gif&apos;);</span><br><span class="line">// if the current working directory is /home/myself/node,</span><br><span class="line">// this returns &apos;/home/myself/node/wwwroot/static_files/gif/image.gif&apos;</span><br></pre></td></tr></table></figure></p>
+<p>最后来说一下在 非常常用的情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">var path1=path.join(__dirname,&apos;pubilc&apos;) </span><br><span class="line">console.log(&quot;path1:&quot;,path1) //d:\Frontend\Nodejs\path\pubilc</span><br><span class="line">//console.log(__dirname) //d:\Frontend\Nodejs\path</span><br><span class="line"></span><br><span class="line">var path2=path.resolve(__dirname,&apos;pubilc&apos;)</span><br><span class="line">console.log(&apos;path2&apos;,path2) //d:\Frontend\Nodejs\path\pubilc</span><br><span class="line">//常用的这种情况下 没区别</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var path3=path.resolve(__dirname,&apos;/pubilc&apos;)</span><br><span class="line">console.log(&apos;path3&apos;,path3) //d:\pubilc</span><br><span class="line">//根据上面例子  这样pubilc已经被解析成了绝对路径，所以这种写法不行。同理写成./pubilc也OK</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path.join(__dirname, &apos;/src&apos;)</span><br><span class="line">path.join(__dirname, &apos;./src&apos;)</span><br><span class="line">path.join(__dirname, &apos;src&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>这三种都是等价的，不要错误写成<code>var path3=path.resolve(__dirname,&#39;/pubilc&#39;)</code> 被解析成绝对路径就好！</p>
+<p>感觉写了片水文啊（捂脸</p>
+<p>希望能对各位有帮助，感谢阅读！</p>
 
       
     </div>
@@ -378,6 +386,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          
+        </div>
+      
 
       
         
@@ -387,15 +401,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/17/selector/" rel="next" title="关于 [] 和 .（点dot） 的杂谈">
+                <i class="fa fa-chevron-left"></i> 关于 [] 和 .（点dot） 的杂谈
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/first-post/" rel="prev" title="first post">
-                first post <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -442,17 +456,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -505,22 +510,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
