@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScipt," />
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333 Array.splice() vs Array.slice() splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。 splice">
+<meta name="keywords" content="JavaScipt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/12/12/hello-world/index.html">
+<meta property="og:title" content="JS数组操作splice &amp; slice">
+<meta property="og:url" content="http://yoursite.com/2017/12/19/JS_array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333 Array.splice() vs Array.slice() splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。 splice">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-12T11:33:07.711Z">
+<meta property="og:updated_time" content="2017-12-19T14:13:01.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="JS数组操作splice &amp; slice">
+<meta name="twitter:description" content="javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333 Array.splice() vs Array.slice() splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。 splice">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/12/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/19/JS_array/"/>
 
 
 
 
 
-  <title> Hello World | Hexo </title>
+  <title> JS数组操作splice & slice | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/JS_array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -291,7 +292,7 @@
             
             
               
-                Hello World
+                JS数组操作splice & slice
               
             
           </h1>
@@ -306,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T19:33:07+08:00">
-                2017-12-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T21:29:11+08:00">
+                2017-12-19
               </time>
             
 
@@ -342,15 +343,20 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。<br>这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333</p>
+<h2 id="Array-splice-vs-Array-slice"><a href="#Array-splice-vs-Array-slice" class="headerlink" title="Array.splice() vs Array.slice()"></a>Array.splice() vs Array.slice()</h2><ul>
+<li>splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。</li>
+<li>splice改变原有array, slice不改变</li>
+<li>splice可以带有多个参数（作为插入值使用）<br><code>array.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">MDN</a><br>参数1：    指定在哪个位置添加/移除项目，使用负值代表从末尾开始。(起始的索引从0开始，末尾的索引从-1开始，即-1代表最后一个元素)<br>参数2：    可选。要删除的项目数量，0表示不删除。—-（如果此参数小于0，会被视为0，并不会报错）<br>参数3-n：  可选。要添加到数组中的新项目。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,2,3,4,5];</span><br><span class="line">console.log(array.splice(2)); // [3, 4, 5], 从2开始删一直到末尾</span><br><span class="line">console.log(array);// [1, 2], 原来的array被改变</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           -5 -4 -3 -2 -1</span><br><span class="line">            |  |  |  |  |</span><br><span class="line">var array4=[16,17,18,19,20];</span><br><span class="line">             |  |  |  |  |</span><br><span class="line">             0  1  2  3  4</span><br><span class="line"> </span><br><span class="line">console.log(array4.splice(-2,1,&quot;me&quot;)); // [19]   返回删除的数字19,在此处插值&apos;me&apos;</span><br><span class="line">console.log(array4); // [16, 17, 18, &quot;me&quot;, 20]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Slice"><a href="#Slice" class="headerlink" title="Slice()"></a>Slice()</h3><p><code>arr.slice([begin[, end]])</code></p>
+<ul>
+<li>必需。指定从何处开始选择（第一个元素的索引为0）,负数则从数组的末尾进行选择。</li>
+<li>可选。指定结束选择的位置。如果省略，则选择从数组的起始位置和结束位置所有元素，负数则从数组的末尾进行选择。<br> （slice extracts up to but not including end.不包括最后的end-）<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">MDN</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,2,3,4,5]</span><br><span class="line">console.log(array.slice(2)); //  [3, 4, 5], 返回了被选择的[3,4,5]</span><br><span class="line"></span><br><span class="line">console.log(array.slice(-2)); // [4, 5], 从后端取</span><br><span class="line"></span><br><span class="line">var array2=[6,7,8,9,0];</span><br><span class="line">console.log(array2.slice(2,4)); // [8, 9] 2-4（不包括4）所以取得是索引2,3。[8,9]</span><br></pre></td></tr></table></figure>
+<p>###<br>Slice()也有array方法不过不在此文的讨论范围内，明天应该会上线String处理的几个方法，感谢阅读！（鞠躬</p>
 
       
     </div>
@@ -378,6 +384,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScipt/" rel="tag"># JavaScipt</a>
+          
+        </div>
+      
 
       
         
@@ -387,15 +399,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/19/session-cookie/" rel="next" title="sessionStorage ,localStorage和Cookie之我见">
+                <i class="fa fa-chevron-left"></i> sessionStorage ,localStorage和Cookie之我见
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/first-post/" rel="prev" title="first post">
-                first post <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-splice-vs-Array-slice"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Array-splice-vs-Array-slice" class="headerlink" title="Array.splice() vs Array.slice()"></a>Array.splice() vs Array.slice()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Slice"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Slice" class="headerlink" title="Slice()"></a>Slice()</span></a></li></ol></li></ol></div>
             
 
           </div>

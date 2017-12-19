@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="从开博客开始…突然觉得自己高产了起来（一个水货的自我修养哈哈哈哈。作为一个选择困难症（逃，希望这篇文章可以帮助大家了解sessionStorage ,localStorage和Cookie，以方便各位的使用。废话不多说，开始 localStorage &amp;amp; sessionStoragesessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。（cookie">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-19T13:19:32.344Z">
+<meta property="og:updated_time" content="2017-12-19T13:30:31.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sessionStorage ,localStorage和Cookie之我见">
 <meta name="twitter:description" content="从开博客开始…突然觉得自己高产了起来（一个水货的自我修养哈哈哈哈。作为一个选择困难症（逃，希望这篇文章可以帮助大家了解sessionStorage ,localStorage和Cookie，以方便各位的使用。废话不多说，开始 localStorage &amp;amp; sessionStoragesessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。（cookie">
@@ -346,10 +346,11 @@
         <p>从开博客开始…突然觉得自己高产了起来（一个水货的自我修养哈哈哈哈。作为一个选择困难症（逃，希望这篇文章可以帮助大家了解sessionStorage ,localStorage和Cookie，以方便各位的使用。废话不多说，开始</p>
 <h2 id="localStorage-amp-sessionStorage"><a href="#localStorage-amp-sessionStorage" class="headerlink" title="localStorage &amp; sessionStorage"></a>localStorage &amp; sessionStorage</h2><p>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。（cookie发送）<br>这两兄弟都是H5的新特性，都是对Storage的拓展，区别不是特别大。主要（基本）体现在持久性上。</p>
 <ul>
-<li><p><code>sessionStorage</code>仅仅适用于<strong>同一个窗口</strong>，如果 <strong>窗口关闭</strong> 或者 <strong>浏览器关闭</strong> <code>sessionStorage</code>就会被删除。<br>但是当页面<strong>刷新（reloads）</strong>和<strong>保存（restores）</strong>依然存在。<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank" rel="noopener">来源</a><br>画个重点，就是页面刷新可以，关闭就没了</p>
-</li>
-<li><p>localStorage<br>localStorage储存时间比较长 —- 直到<strong>明确被</strong>删除（比如清除浏览器 cache 或者 调用清除方法）</p>
-</li>
+<li><code>sessionStorage</code>仅仅适用于<strong>同一个窗口</strong>，如果 <strong>窗口关闭</strong> 或者 <strong>浏览器关闭</strong> <code>sessionStorage</code>就会被删除。<br>但是当页面<strong>刷新（reloads）</strong>和<strong>保存（restores）</strong>依然存在。<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank" rel="noopener">来源</a><br>画个重点，就是页面刷新可以，关闭就没了</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>localStorage<br>localStorage储存时间比较长 —- 直到<strong>明确被</strong>删除（比如清除浏览器 cache 或者 调用清除方法）</li>
 </ul>
 <blockquote>
 <p>Another subtle difference is that for example on Safari (8.0.3) localStorage has a limit of 2551 k characters but sessionStorage has unlimited storage</p>
@@ -412,6 +413,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/19/JS_array/" rel="prev" title="JS数组操作splice & slice">
+                JS数组操作splice & slice <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +488,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -496,7 +501,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
