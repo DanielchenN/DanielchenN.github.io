@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="title: JWT(Json Web Token)的使用date: 2017-12-18 19:26:27 tags: 前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用">
+<meta name="description" content="前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。 传统session面临的问题 session 每次进行验证，服务器都会做出记录，久而久之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2017/12/18/JWT/index.html">
+<meta property="og:title" content="JWT(Json Web Token)的使用">
+<meta property="og:url" content="http://yoursite.com/2017/12/18/jwt/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: JWT(Json Web Token)的使用date: 2017-12-18 19:26:27 tags: 前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用">
+<meta property="og:description" content="前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。 传统session面临的问题 session 每次进行验证，服务器都会做出记录，久而久之">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-18T13:48:14.354Z">
+<meta property="og:updated_time" content="2017-12-19T00:06:09.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: JWT(Json Web Token)的使用date: 2017-12-18 19:26:27 tags: 前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用">
+<meta name="twitter:title" content="JWT(Json Web Token)的使用">
+<meta name="twitter:description" content="前言由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自官网和标准和少数博客。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。 JWT是一种新的认证机制，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。 传统session面临的问题 session 每次进行验证，服务器都会做出记录，久而久之">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/18/JWT/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/18/jwt/"/>
 
 
 
 
 
-  <title>  | Hexo </title>
+  <title> JWT(Json Web Token)的使用 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/JWT/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/jwt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -291,7 +291,7 @@
             
             
               
-                
+                JWT(Json Web Token)的使用
               
             
           </h1>
@@ -342,9 +342,7 @@
       
 
       
-        <hr>
-<p>title: JWT(Json Web Token)的使用<br>date: 2017-12-18 19:26:27</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags: "></a>tags: </h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自<code>官网</code>和<code>标准</code>和<code>少数博客</code>。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于我也只是JWT新手，今天在写一个小项目的时候用到了，就自己整理了一下。如下内容均为自己整理，资料来自<code>官网</code>和<code>标准</code>和<code>少数博客</code>。受限于自身技术水平，和翻译水平，难免有些错误，我已经尽可能避免，还是希望不要误导了别人。</p>
 <p>JWT是一种新的认证机制，这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。</p>
 <h2 id="传统session面临的问题"><a href="#传统session面临的问题" class="headerlink" title="传统session面临的问题"></a>传统session面临的问题</h2><ul>
 <li>session 每次进行验证，服务器都会做出记录，久而久之服务器压力很大</li>
@@ -535,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text"><a href="#tags" class="headerlink" title="tags: "></a>tags: </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统session面临的问题"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;"></a>&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-number">4.</span> <span class="nav-text"><a href="#token" class="headerlink" title="token"></a>token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JWT"><span class="nav-number">5.</span> <span class="nav-text"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#header"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#header" class="headerlink" title="header"></a>header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Payload"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Registered-claims-注册声明-—推荐使用，但不是必须-来源-https-tools-ietf-org-html-rfc7519-page-9"><span class="nav-number">5.2.1.</span> <span class="nav-text"><a href="#Registered-claims-&#x6CE8;&#x518C;&#x58F0;&#x660E;-&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B;-&#x6765;&#x6E90;-https-tools-ietf-org-html-rfc7519-page-9" class="headerlink" title="Registered claims(&#x6CE8;&#x518C;&#x58F0;&#x660E;)&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B; [&#x6765;&#x6E90;][https://tools.ietf.org/html/rfc7519#page-9]"></a>Registered claims(&#x6CE8;&#x518C;&#x58F0;&#x660E;)&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B; [&#x6765;&#x6E90;][<a href="https://tools.ietf.org/html/rfc7519#page-9" target="_blank" rel="noopener">https://tools.ietf.org/html/rfc7519#page-9</a>]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Public-claims"><span class="nav-number">5.2.2.</span> <span class="nav-text"><a href="#Public-claims" class="headerlink" title="Public claims"></a>Public claims</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Private-claims"><span class="nav-number">5.2.3.</span> <span class="nav-text"><a href="#Private-claims" class="headerlink" title="Private claims"></a>Private claims</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Signature"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#Signature" class="headerlink" title="Signature"></a>Signature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.4.</span> <span class="nav-text"><a href="#&#x9002;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x9002;&#x7528;&#x573A;&#x666F;"></a>&#x9002;&#x7528;&#x573A;&#x666F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">5.5.</span> <span class="nav-text"><a href="#&#x7ED3;&#x8BED;" class="headerlink" title="&#x7ED3;&#x8BED;"></a>&#x7ED3;&#x8BED;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统session面临的问题"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;"></a>&#x4F20;&#x7EDF;session&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-number">3.</span> <span class="nav-text"><a href="#token" class="headerlink" title="token"></a>token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JWT"><span class="nav-number">4.</span> <span class="nav-text"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#header"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#header" class="headerlink" title="header"></a>header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Payload"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Registered-claims-注册声明-—推荐使用，但不是必须-来源-https-tools-ietf-org-html-rfc7519-page-9"><span class="nav-number">4.2.1.</span> <span class="nav-text"><a href="#Registered-claims-&#x6CE8;&#x518C;&#x58F0;&#x660E;-&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B;-&#x6765;&#x6E90;-https-tools-ietf-org-html-rfc7519-page-9" class="headerlink" title="Registered claims(&#x6CE8;&#x518C;&#x58F0;&#x660E;)&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B; [&#x6765;&#x6E90;][https://tools.ietf.org/html/rfc7519#page-9]"></a>Registered claims(&#x6CE8;&#x518C;&#x58F0;&#x660E;)&#x2014;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5FC5;&#x987B; [&#x6765;&#x6E90;][<a href="https://tools.ietf.org/html/rfc7519#page-9" target="_blank" rel="noopener">https://tools.ietf.org/html/rfc7519#page-9</a>]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Public-claims"><span class="nav-number">4.2.2.</span> <span class="nav-text"><a href="#Public-claims" class="headerlink" title="Public claims"></a>Public claims</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Private-claims"><span class="nav-number">4.2.3.</span> <span class="nav-text"><a href="#Private-claims" class="headerlink" title="Private claims"></a>Private claims</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Signature"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#Signature" class="headerlink" title="Signature"></a>Signature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">4.4.</span> <span class="nav-text"><a href="#&#x9002;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x9002;&#x7528;&#x573A;&#x666F;"></a>&#x9002;&#x7528;&#x573A;&#x666F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">4.5.</span> <span class="nav-text"><a href="#&#x7ED3;&#x8BED;" class="headerlink" title="&#x7ED3;&#x8BED;"></a>&#x7ED3;&#x8BED;</span></a></li></ol></li></ol></div>
             
 
           </div>
