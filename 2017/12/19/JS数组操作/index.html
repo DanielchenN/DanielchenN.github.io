@@ -91,11 +91,11 @@
 <meta name="keywords" content="JavaScipt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS数组操作splice &amp; slice">
-<meta property="og:url" content="http://yoursite.com/2017/12/19/JS_array/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/19/JS数组操作/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333 Array.splice() vs Array.slice() splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。 splice">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-19T14:13:01.380Z">
+<meta property="og:updated_time" content="2017-12-19T14:23:23.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数组操作splice &amp; slice">
 <meta name="twitter:description" content="javascript中slice(),splice(),split(),substring(),substr() 总是容易混淆…今天记录一下我的体会，也方便各位的使用。这篇专注于数组操作，下篇再说字符串（才不是因为我太懒2333 Array.splice() vs Array.slice() splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。 splice">
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/19/JS_array/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/19/JS数组操作/"/>
 
 
 
@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/JS_array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/JS数组操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -347,9 +347,10 @@
 <h2 id="Array-splice-vs-Array-slice"><a href="#Array-splice-vs-Array-slice" class="headerlink" title="Array.splice() vs Array.slice()"></a>Array.splice() vs Array.slice()</h2><ul>
 <li>splice 返回一个数组中被删除的项目，slice返回被选择的项目，并作为一个新数组返回。</li>
 <li>splice改变原有array, slice不改变</li>
-<li>splice可以带有多个参数（作为插入值使用）<br><code>array.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">MDN</a><br>参数1：    指定在哪个位置添加/移除项目，使用负值代表从末尾开始。(起始的索引从0开始，末尾的索引从-1开始，即-1代表最后一个元素)<br>参数2：    可选。要删除的项目数量，0表示不删除。—-（如果此参数小于0，会被视为0，并不会报错）<br>参数3-n：  可选。要添加到数组中的新项目。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,2,3,4,5];</span><br><span class="line">console.log(array.splice(2)); // [3, 4, 5], 从2开始删一直到末尾</span><br><span class="line">console.log(array);// [1, 2], 原来的array被改变</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           -5 -4 -3 -2 -1</span><br><span class="line">            |  |  |  |  |</span><br><span class="line">var array4=[16,17,18,19,20];</span><br><span class="line">             |  |  |  |  |</span><br><span class="line">             0  1  2  3  4</span><br><span class="line"> </span><br><span class="line">console.log(array4.splice(-2,1,&quot;me&quot;)); // [19]   返回删除的数字19,在此处插值&apos;me&apos;</span><br><span class="line">console.log(array4); // [16, 17, 18, &quot;me&quot;, 20]</span><br></pre></td></tr></table></figure>
-</li>
+<li>splice可以带有多个参数（作为插入值使用）</li>
 </ul>
+<a id="more"></a>
+<p><code>array.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">MDN</a><br>参数1：    指定在哪个位置添加/移除项目，使用负值代表从末尾开始。(起始的索引从0开始，末尾的索引从-1开始，即-1代表最后一个元素)<br>参数2：    可选。要删除的项目数量，0表示不删除。—-（如果此参数小于0，会被视为0，并不会报错）<br>参数3-n：  可选。要添加到数组中的新项目。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var array=[1,2,3,4,5];</span><br><span class="line">console.log(array.splice(2)); // [3, 4, 5], 从2开始删一直到末尾</span><br><span class="line">console.log(array);// [1, 2], 原来的array被改变</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           -5 -4 -3 -2 -1</span><br><span class="line">            |  |  |  |  |</span><br><span class="line">var array4=[16,17,18,19,20];</span><br><span class="line">             |  |  |  |  |</span><br><span class="line">             0  1  2  3  4</span><br><span class="line"> </span><br><span class="line">console.log(array4.splice(-2,1,&quot;me&quot;)); // [19]   返回删除的数字19,在此处插值&apos;me&apos;</span><br><span class="line">console.log(array4); // [16, 17, 18, &quot;me&quot;, 20]</span><br></pre></td></tr></table></figure></p>
 <h3 id="Slice"><a href="#Slice" class="headerlink" title="Slice()"></a>Slice()</h3><p><code>arr.slice([begin[, end]])</code></p>
 <ul>
 <li>必需。指定从何处开始选择（第一个元素的索引为0）,负数则从数组的末尾进行选择。</li>
