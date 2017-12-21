@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-JavaScript," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="作为一个懒人，在JS . 和 []之间总是选择.，今天查资料时，倒是看到了 “点” 和 “括号”的一些区别。这里抛砖引玉一下 先看一个常见例子：12345var obj = &amp;#123; &amp;quot;say&amp;quot; : &amp;quot;hello&amp;quot; &amp;#125;;var x = &amp;quot;say&amp;quot;;var y = obj[x];console.log(y); // hello">
-<meta name="keywords" content="-JavaScript">
+<meta name="description" content="以前写代码，想判断是否是空数组的时候，常常写if([])，结果程序怎么都调不通。现在就来说说这个新手常常会感到困惑的问题。在浏览器中运行如下代码：1234if([])&amp;#123;  console.log(&amp;apos;abc&amp;apos;)  // abc&amp;#125; 我们会发现if([])是作为true，这个问题要说深了很复杂，我抛砖引玉谈谈自己的看法。下面我们来看这样一行代码1typeof([]">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 [] 和 .（点dot） 的杂谈">
-<meta property="og:url" content="http://yoursite.com/2017/12/17/selector/index.html">
+<meta property="og:title" content="JS truthy 与 if 判断">
+<meta property="og:url" content="http://yoursite.com/2017/12/21/truthy/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="作为一个懒人，在JS . 和 []之间总是选择.，今天查资料时，倒是看到了 “点” 和 “括号”的一些区别。这里抛砖引玉一下 先看一个常见例子：12345var obj = &amp;#123; &amp;quot;say&amp;quot; : &amp;quot;hello&amp;quot; &amp;#125;;var x = &amp;quot;say&amp;quot;;var y = obj[x];console.log(y); // hello">
+<meta property="og:description" content="以前写代码，想判断是否是空数组的时候，常常写if([])，结果程序怎么都调不通。现在就来说说这个新手常常会感到困惑的问题。在浏览器中运行如下代码：1234if([])&amp;#123;  console.log(&amp;apos;abc&amp;apos;)  // abc&amp;#125; 我们会发现if([])是作为true，这个问题要说深了很复杂，我抛砖引玉谈谈自己的看法。下面我们来看这样一行代码1typeof([]">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-18T02:02:08.742Z">
+<meta property="og:updated_time" content="2017-12-21T11:49:40.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 [] 和 .（点dot） 的杂谈">
-<meta name="twitter:description" content="作为一个懒人，在JS . 和 []之间总是选择.，今天查资料时，倒是看到了 “点” 和 “括号”的一些区别。这里抛砖引玉一下 先看一个常见例子：12345var obj = &amp;#123; &amp;quot;say&amp;quot; : &amp;quot;hello&amp;quot; &amp;#125;;var x = &amp;quot;say&amp;quot;;var y = obj[x];console.log(y); // hello">
+<meta name="twitter:title" content="JS truthy 与 if 判断">
+<meta name="twitter:description" content="以前写代码，想判断是否是空数组的时候，常常写if([])，结果程序怎么都调不通。现在就来说说这个新手常常会感到困惑的问题。在浏览器中运行如下代码：1234if([])&amp;#123;  console.log(&amp;apos;abc&amp;apos;)  // abc&amp;#125; 我们会发现if([])是作为true，这个问题要说深了很复杂，我抛砖引玉谈谈自己的看法。下面我们来看这样一行代码1typeof([]">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/17/selector/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/21/truthy/"/>
 
 
 
 
 
-  <title> 关于 [] 和 .（点dot） 的杂谈 | Hexo </title>
+  <title> JS truthy 与 if 判断 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/selector/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/truthy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -292,7 +292,7 @@
             
             
               
-                关于 [] 和 .（点dot） 的杂谈
+                JS truthy 与 if 判断
               
             
           </h1>
@@ -307,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T21:37:24+08:00">
-                2017-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T18:08:10+08:00">
+                2017-12-21
               </time>
             
 
@@ -343,17 +343,15 @@
       
 
       
-        <p>作为一个懒人，在JS <code>.</code> 和 <code>[]</code>之间总是选择<code>.</code>，今天查资料时，倒是看到了 “点” 和 “括号”的一些区别。这里抛砖引玉一下</p>
-<p>先看一个常见例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; &quot;say&quot; : &quot;hello&quot; &#125;;</span><br><span class="line">var x = &quot;say&quot;;</span><br><span class="line">var y = obj[x];</span><br><span class="line">console.log(y); // hello    </span><br><span class="line">obj.x  //  undefine</span><br></pre></td></tr></table></figure></p>
+        <p>以前写代码，想判断是否是空数组的时候，常常写if([])，结果程序怎么都调不通。现在就来说说这个新手常常会感到困惑的问题。<br>在浏览器中运行如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if([])&#123;</span><br><span class="line">  console.log(&apos;abc&apos;)</span><br><span class="line">  // abc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们会发现if([])是作为true，这个问题要说深了很复杂，我抛砖引玉谈谈自己的看法。<br>下面我们来看这样一行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof([]) // object（惊不惊喜意不意外，不是array是object）----这里为啥是object之后再说，先用这个结论</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>在上面这种情况下，使用点obj.x 是没有效果的</p>
-<p>查阅官网，有这么一句话— The dot notation only works with property names which are valid identifier names<br>即点（dot）只能被用来访问 有效的标识符名称，而括号[]会按照字符串（string）进行处理，甚至可以强制作为字符串。这样在括号中就可以使用任何字符序列作为属性名称。（因为字符串包含的内容是不受限制的）。</p>
-<p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">obj.foo;  // valid</span><br><span class="line">obj.else  // valid, reserved keywords are valid identifier names</span><br><span class="line">obj.42    // invalid, identifier names cannot start with numbers</span><br><span class="line">obj.3foo  // invalid, </span><br><span class="line">obj.foo-bar // invalid, `-` is not allowed in identifier names</span><br><span class="line"></span><br><span class="line">obj[42]   // valid, 42 will be coerced to &quot;42&quot;</span><br><span class="line">obj[&quot;--&quot;] // valid, any character sequence is allowed</span><br><span class="line">obj[bar]  // valid, will evaluate the variable `bar` and </span><br><span class="line">          // use its value as property name</span><br></pre></td></tr></table></figure></p>
-<p>综上：</p>
-<ol>
-<li>当属性名称包含在变量中取值（第一种情况） 用大括号</li>
-<li>当属性名称中含有 <code>非有效</code> 的标识符，包括但不限于 数字，空格，<code>-</code>等等，请务必用[]，而不能使用.（dot）</li>
-</ol>
+<p>根据<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="noopener">MDN Truthy</a>，JS除了<code>true,false</code>的概念还有<code>truthy falsy</code>的概念—- 在JavaScript中，Truthy(真值)指的是在<code>Boolean</code>上下文中转换后的值为真的值。所有值都是真值，除非它们被定义为 falsy (即， 除了false，0，“”，null，undefined和NaN 外)。<br>JavaScript 在Boolean上下文中使用<strong>强制类型转换</strong>，这里的object会被转化为true。<br>这也就是为什么if[]为true.</p>
+<p>在实际运用中 我们只需要记得“假值”只有6个，<code>false，0，“”，null，undefined和NaN</code></p>
+<p>引申说一下： 如果细心可以发现 这行代码是false <code>[] == true</code> 发生这个现象的原因是，[]==true<strong>不发生</strong>自动类型转换，只比较值是否相等，所以这里是false.</p>
+<p>如果初入前端，最好不要使用’==’进行判断，使用’===’。 ‘==’会进行类型转换，不注意出错程序出了Bug会非常难调。</p>
+<p>最后附上一个表格，记录了’==’,’===’,’if’判断的true false.<br><a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="noopener">https://dorey.github.io/JavaScript-Equality-Table/</a></p>
+<p>感谢阅读！</p>
 
       
     </div>
@@ -383,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -396,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/15/Ajax-1/" rel="next" title="浅谈Ajax中的contentType和processData">
-                <i class="fa fa-chevron-left"></i> 浅谈Ajax中的contentType和processData
+              <a href="/2017/12/20/str-method/" rel="next" title="JS字符串操作">
+                <i class="fa fa-chevron-left"></i> JS字符串操作
               </a>
             
           </div>
@@ -405,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/18/nodejs-path/" rel="prev" title="Nodejs path.resolve 和 path.join">
-                Nodejs path.resolve 和 path.join <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
