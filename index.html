@@ -344,22 +344,18 @@
 
       
         
-          
-            <p>上篇留了个遗留问题 <code>typeof([]) // object</code> ，如果typeof将array返回的是object那我们要怎么判断，传进来的变量array和object呢？<br>下面来走进…JS。</p>
+          <p>上篇留了个遗留问题 <code>typeof([]) // object</code> ，如果typeof将array返回的是object那我们要怎么判断，传进来的变量array和object呢？<br>下面来走进…JS。</p>
 <h2 id="type"><a href="#type" class="headerlink" title="type([])"></a>type([])</h2><p>在<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">JavaScript的数据结构</a>中有提到<br>JS有7种数据类型</p>
 <blockquote>
 <p>The latest ECMAScript standard defines seven data types:<br>Six data types that are primitives(原始类型):<br>    Boolean<br>    Null<br>    Undefined<br>    Number<br>    String<br>    Symbol (new in ECMAScript 6)<br>and Object(对象类型)</p>
 </blockquote>
-<p>而typeof这个方法返回的是原始类型，或者object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Undefined	&quot;undefined&quot;</span><br><span class="line">Null	&quot;object&quot; (Null返回object比较特殊，是个历史遗留问题，这个不管它)</span><br><span class="line">Boolean	&quot;boolean&quot;</span><br><span class="line">Number	&quot;number&quot;</span><br><span class="line">String	&quot;string&quot;</span><br><span class="line">Symbol (new in ECMAScript 2015)	&quot;symbol&quot;</span><br><span class="line">Host object (provided by the JS environment)	Implementation-dependent</span><br><span class="line">Function object (implements [[Call]] in ECMA-262 terms)	&quot;function&quot;</span><br><span class="line">Any other object	&quot;object&quot;</span><br></pre></td></tr></table></figure></p>
-<p>为啥typeof(array)等于object也有了解释<br>Arrays are regular objects for which there is a particular relationship between integer-key-ed properties and the ‘length’ property. Additionally, arrays inherit from Array.prototype which provides to them a handful of convenient methods to manipulate arrays. For example, indexOf (searching a value in the array) or push (adding an element to the array), etc. This makes Arrays a perfect candidate to represent lists or sets.<br>array其实并不是JS标准的7种类型，只算是object的一种。</p>
-<h2 id="判断-Array-Object"><a href="#判断-Array-Object" class="headerlink" title="判断 Array Object"></a>判断 Array Object</h2><p>两种方法</p>
-<ul>
-<li>Array.isArray  (对老浏览器，可能有兼容性问题)</li>
-<li>Object.prototype.toString.call()</li>
-</ul>
-<p>好了，这篇就到这了，希望能让看客老爷有些收获，感谢阅读！</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/21/typeof/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
