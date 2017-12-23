@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,13 +87,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="从一个经典的问题说起1234567function myTimeoutFunction()&amp;#123;    doStuff();    setTimeout(myTimeoutFunction, 1000);&amp;#125;myTimeoutFunction(); 1234567function myTimeoutFunction()&amp;#123;    doStuff();&amp;#125;myTimeo">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS定时器之杂谈">
+<meta property="og:url" content="http://yoursite.com/2017/12/23/timer/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="从一个经典的问题说起1234567function myTimeoutFunction()&amp;#123;    doStuff();    setTimeout(myTimeoutFunction, 1000);&amp;#125;myTimeoutFunction(); 1234567function myTimeoutFunction()&amp;#123;    doStuff();&amp;#125;myTimeo">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://johnresig.com/files/427px-Timers.png">
+<meta property="og:updated_time" content="2017-12-23T13:09:59.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="JS定时器之杂谈">
+<meta name="twitter:description" content="从一个经典的问题说起1234567function myTimeoutFunction()&amp;#123;    doStuff();    setTimeout(myTimeoutFunction, 1000);&amp;#125;myTimeoutFunction(); 1234567function myTimeoutFunction()&amp;#123;    doStuff();&amp;#125;myTimeo">
+<meta name="twitter:image" content="https://johnresig.com/files/427px-Timers.png">
 
 
 
@@ -121,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/23/timer/"/>
 
 
 
 
 
-  <title> Hexo </title>
+  <title> JS定时器之杂谈 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
@@ -152,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -268,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/image_upload/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/23/timer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daniel Chen">
@@ -289,10 +294,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/12/15/image_upload/" itemprop="url">
-                  Nodejs 图片上传及回显
-                </a>
+                JS定时器之杂谈
               
             
           </h1>
@@ -307,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:40:14+08:00">
-                2017-12-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-23T19:06:32+08:00">
+                2017-12-23
               </time>
             
 
@@ -343,303 +345,93 @@
       
 
       
+        <p>从一个经典的问题说起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function myTimeoutFunction()</span><br><span class="line">&#123;</span><br><span class="line">    doStuff();</span><br><span class="line">    setTimeout(myTimeoutFunction, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myTimeoutFunction();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function myTimeoutFunction()</span><br><span class="line">&#123;</span><br><span class="line">    doStuff();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myTimeoutFunction();</span><br><span class="line">setInterval(myTimeoutFunction, 1000);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>如下内容主要翻译，整理自<a href="https://johnresig.com/blog/how-javascript-timers-work/" target="_blank" rel="noopener">johnresig</a>，也就是jQuery之父这位大佬的博客。（大佬博客带飞）</p>
+<p>这两个函数乍看之下是一样的，都是间隔1s，不断运行doStuff()这个函数，那有没有区别呢？这就是今天要说的两个函数</p>
+<ul>
+<li>var id = setTimeout(fn, delay); 生成单次定时器，并在延时后调用fn这个函数</li>
+<li>var id = setInterval(fn, delay); 每次间隔后都会调用fn这个函数，直到被取消。</li>
+</ul>
+<p>有一句非常重要的知识点必须了解<strong>JS是单线程的</strong>，由于JS在浏览器中运行是单线程的，异步时间（比如click或者timer）只会在执行时运行。<br><img src="https://johnresig.com/files/427px-Timers.png"><br><a href="https://johnresig.com/files/Timers.png" target="_blank" rel="noopener">点击查看大图</a><br>蓝色的框表示正在执行的JavaScript部分，例如，第一个JavaScript block执行大约18ms，Mouse clickblock 大约11ms，依此类推.</p>
+<p>由于JS单线程特性（一次只能执行一段代码），这些代码块中的每一段都“阻塞”了其他异步事件的运行。换句话说，当一个异步事件发生时，比如（比如鼠标点击，计时器触发或者XMLHttpRequest完成），会在队列中等待执行。</p>
+<p>首先，在第一个JS block中，2个定时器被初始化，一个 10ms  setTimeout 和一个 10ms setInterval。由于Timer开始的时间和地点，在我们实际完成第一个JS代码块之前，实际上会被触发，但是注意！并不会立刻执行（由于单线程的原因）这是会进入队列排队，等待执行</p>
+<p>此外，在第一个JS block中，我们看到一个鼠标点击事件的发生，与这个异步事件相关的JavaScript回调，和Timer类似，不会立即执行，也在队列中等待。</p>
+<p>在第一个JS block初始化完成之后，浏览器会抛出一个问题“What is waiting to be executed?（哪个函数等在被执行）”，现在鼠标点击，和Timer都在等待，然后浏览器选择一个（鼠标点击回调）并立即执行。Timer将等待下一个可行的时间执行。</p>
+<p>注意图上标注，当鼠标点击事件正在处理时，第一个interval也执行了(之前定义的定时器的第一次循环)，和之前一样，它的处理程序也会排队等待。但是请注意，当这个interval再次被触发（此时定时器的处理程序正在运行），这次interval的handler就会被移除。浏览器如果不这样处理的话，就会有很多个interval的处理在排队。所以浏览器倾向简化队列，直到没有interval在队列中（多的都会被drop掉）。</p>
+<p>这告诉我们一个事实： Interval 不关心 现在正在执行什么事件，他们只会接着在队列中排队，即时这意味着在两个callback之间的interval会被删除。</p>
+<p>最后，在第二个时间间隔回调完成执行之后，我们可以看到JavaScript引擎没有什么可执行的了。这意味着浏览器现在等待发生新的异步事件。当间隔再次发生时，我们得到这个在50毫秒的标记。然而，这一次没有任何阻止它的执行，所以它立即启动。</p>
+<p>setTimeout代码在上一次回调执行之后总是会有至少10ms的延迟（只会多，不会少），而setInterval不管最后一次回调执行的时间，将会每10ms执行一次回调。</p>
+<p>这样刚开始的两个程序也就有答案了不是么~</p>
+<p>（这篇翻译的不是很好，之后会修改润色一下。。）</p>
+
+      
+    </div>
+
+    <div>
+      
         
-          <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/15/image_upload/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/21/typeof/" rel="next" title="typeof(array)===object和如何判断array & object 的问题">
+                <i class="fa fa-chevron-left"></i> typeof(array)===object和如何判断array & object 的问题
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/first-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daniel Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/12/first-post/" itemprop="url">
-                  first post
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T20:40:14+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daniel Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/12/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T19:33:07+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -647,6 +439,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -827,6 +623,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
