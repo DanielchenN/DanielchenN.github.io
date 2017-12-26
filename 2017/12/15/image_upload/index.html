@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="写在前面这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-19T02:18:30.441Z">
+<meta property="og:updated_time" content="2017-12-26T14:00:53.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nodejs 图片上传及回显">
 <meta name="twitter:description" content="写在前面这是一个比较简单的全栈Demo，写这个的动机主要是：当我查询网上一些nodejs资料时，很少有完整的传输文件的案例，大多是通过前端form 的action属性直接上传，所以萌生了写通过FromData上传图片的案例。功能实现之后做了一些前端展示。算是个比较不错的入门全栈项目。">
@@ -354,7 +354,7 @@
 <li>“read-chunk”: “^2.1.0”  </li>
 </ul>
 <p>这里的 read-chunk和filetype是为了读取文件后缀名，如果不想用库。</p>
-<p>可以通过 <code>splice(&#39;.&#39;)[1]</code> 拿到后缀名是一样的（好像用库代码还多了，捂脸</p>
+<p>可以通过 <code>split(&#39;.&#39;)[1]</code> 拿到后缀名是一样的（好像用库代码还多了，捂脸（之前笔误写成了splice）splice是用于分割字符串，抱歉抱歉</p>
 <p>直接在更目录下 <code>npm install</code> 再 <code>node app.js</code>就可以运行了。</p>
 <h2 id="前后端构架"><a href="#前后端构架" class="headerlink" title="前后端构架"></a>前后端构架</h2><p>前端是基于boostrap 的一个简单的表单上传和展示，并没有特别复杂的组件，这里不再阐述了。</p>
 <p>###后端</p>
